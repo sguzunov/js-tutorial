@@ -2,7 +2,7 @@
 
 https://docs.glue42.com/tutorials/enterprise/javascript/index.html
 
-# Glue Desktop (GD) Setup
+# Glue42 Setup
 
-- Install Glue Desktop
+- Install Glue42 
 - Launch it from your desktop icon
