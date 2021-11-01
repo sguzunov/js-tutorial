@@ -16,7 +16,8 @@
     <!-- Put GLUE configuration here -->
     <script src="../lib/tick42-glue/tick42-glue-config.js"></script>
     <!-- Put GLUE here -->
-    <script src="../lib/tick42-glue/tick42-glue-dev.js"></script>
+    <script src="../lib/tick42-glue/desktop.browser.js"></script>
+    <script src="../lib/tick42-workspaces/workspaces.umd.js"></script>
 </head>
 
 <body>
@@ -41,33 +42,34 @@
         </div>
     </div>
     <script>
-    Glue(glueConfig).then(function(glue) {
+    Glue({
+        glueConfig,
+        libraries: [GlueWorkspaces]
+    }).then(function(glue) {
         console.log(glue.version);
         window.glue = glue;
-        glue.activities.ready().then(function() {
-            initGlue();
-        }).catch(function(err) {
-            console.log(err);
-        });
+        initGlue();
     }).catch(function(errors) {
         console.error(errors);
     })
 
-    function initGlue() {
+    async function initGlue() {
         glue.agm.register({
                 name: 'SetParty',
                 accepts: 'Composite: {string? pId, string? ucn} party',
                 object_types: ['Party'] // maybe g42.Party
             },
-            function(args) {
-                if (glue.activities.inActivity) {
+            async function(args) {
+                const isWorkspace = await glue.workspaces.inWorkspace();
+                if (isWorkspace) {
                     return;
                 }
                 handleClientDetails(args.party);
             })
 
-        if (typeof glue.activities.my.activity !== 'undefined') {
-            glue.activities.my.activity.onContextChanged(function(context) {
+        const myWsp = await glue.workspaces.getMyWorkspace().catch(() => false);
+        if (myWsp) {
+            myWsp.onContextUpdated(function(context) {
                 if (context.party) {
                     handleClientDetails(context.party);
                 }

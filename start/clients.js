@@ -77,7 +77,7 @@ const setUpUi = () => {
         const direction = getWindowDirection();
     };
 
-    // TUTOR_TODO Chapter 11 - check if you are in an activity and setup the frame buttons and events only if you are NOT
+    // TUTOR_TODO Chapter 12 - check if you are in a workspace and setup the frame buttons and events only if you are NOT
     setUpPortfolioFrameButton();
     setUpFrameButtonClick();
 };
@@ -93,7 +93,7 @@ const setupClients = () => {
 
         row.onclick = () => {
 
-            // TUTOR_TODO Chapter 11 - check if you are in an activity and either update the activity context or open a tab window and invoke the agm method
+            // TUTOR_TODO Chapter 12 - check if you are in a workspace and either update the workspace context or open a tab window and invoke the agm method
 
             // TUTOR_TODO Chapter 4.4 - pass the result of getWindowDirection as a second argument for openTabWindow
             const direction = getWindowDirection();

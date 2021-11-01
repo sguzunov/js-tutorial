@@ -26,11 +26,11 @@ let logger;
 // // const glue4OfficeOptions = {
 // //     glue: glue,
 // //     outlook: true,
-// //        // TUTOR_TODO Chapter 9 
+// //        // TUTOR_TODO Chapter 9
 // //        // excel: true
 // // };
 
-// // TUTOR_TODO Chapter 8 - Initiate Glue4Office with the supplied glue4OfficeOptions then assign the returned g4o object to the window in order to be globally accessible 
+// // TUTOR_TODO Chapter 8 - Initiate Glue4Office with the supplied glue4OfficeOptions then assign the returned g4o object to the window in order to be globally accessible
 
 // Don't forget to catch any errors.
 
@@ -115,7 +115,7 @@ const setUpAppContent = () => {
 
 const registerAgmMethod = () => {
 
-    // TUTOR_TODO Chapter 11 - register the AGM method only if you are not in activity, otherwise listen for activity context changes and call loadPortfolio
+    // TUTOR_TODO Chapter 12 - register the AGM method only if you are not in a workspace, otherwise listen for workspace context changes and call loadPortfolio
 
     // TUTOR_TODO Chapter 2.1 - register an AGM method 'SetParty', which accepts a composite argument 'party' with optional strings pId and ucn
     // in the callback - call loadPortfolio passing the pId received as a parameter.

@@ -1,0 +1,27 @@
+{
+    "allowMultiple": false,
+    "caption": "A Demo showing client details.",
+    "details": {
+        "height": 400,
+        "left": 500,
+        "loader": {
+            "enabled": true
+        },
+        "minHeight": 400,
+        "minWidth": 600,
+        "mode": "flat",
+        "name": "clients_window",
+        "top": 50,
+        "url": "http://localhost:22909/app/client-details-window.html",
+        "width": 600
+    },
+    "disabled": false,
+    "hidden": false,
+    "icon": "http://localhost:22909/resources/icons/tick42.ico",
+    "name": "ClientsDetails",
+    "title": "Clients Details",
+    "type": "window",
+    "customProperties": {
+        "includeInWorkspaces": true
+    }
+}
